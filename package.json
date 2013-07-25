@@ -1,0 +1,15 @@
+{
+  "name": "node-firefly2",
+  "description": "",
+  "version": "0.0.1",
+  "author": "Redfish LLC",
+  "main": "addon.js",
+  "tags": ["pointgrey", "firefly2", "camera"],
+  "gypfile": true,
+  "scripts": {
+    "preinstall": "node-gyp clean configure build"
+  },
+  "dependencies": {
+        "png": ">0.0.0"
+   }
+}
