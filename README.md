@@ -11,9 +11,11 @@ Unfortunatly, Point grey requires one to create a login before downloading the s
 Intallation:   
 ------------
 <i> Note: this only works on linux at the moment. Maybe someone could help with the windows version. Hint Hint Nudge Nudge. </i>
-* Download and install Point grey SDK from  http://www.ptgrey.com/support/downloads/downloads_admin/Index.aspx
-* cd node-firefly2
-* npm install
+* Download and install Point grey SDK from  http://www.ptgrey.com/support/downloads/downloads_admin/Index.aspx;
+ 
+* cd node-firefly2;
+
+* npm install;
 
 
 Example:
