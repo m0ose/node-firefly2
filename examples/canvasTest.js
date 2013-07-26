@@ -28,11 +28,11 @@ var obj = new addon.FireFlyWrap(10);
 console.log( 'num cameras' , obj.getNumCameras())
 console.log("start Camera 0 ", obj.startCamera())
 console.log( obj.getCamInfo() )
-console.log("auto gain is ", obj.autoGain(false) )
-console.log("auto exposure is ", obj.autoExposure(false) )
+console.log("auto gain is ", obj.autoGain(true) )
+console.log("auto exposure is ", obj.autoExposure(true) )
 obj.triggerOff(false);//True uses the cable
-console.log("set gain to ", obj.gain(200) )
-console.log("set exposure to ", obj.exposure(300) )
+//console.log("set gain to ", obj.gain(200) )
+//console.log("set exposure to ", obj.exposure(300) )
 obj.frameRate();
 
 //take pictures
