@@ -7,7 +7,7 @@ var timer = require('../timer.js').timer
 
 var cam = new addon.FireFlyWrap();
 console.log( 'num cameras' , cam.getNumCameras())
-console.log("start Camera 0 ", cam.startCamera())
+console.log(" start Camera 0 ", cam.startCamera())
 
 cam.autoGain(false);
 cam.autoExposure(false);
