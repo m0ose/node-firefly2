@@ -1,4 +1,6 @@
+
 var addon = require('../build/Release/addon');
+//var addon = require('node-firefly2')
 var fs = require('fs');
 var http = require('http');
 var url = require('url');
@@ -12,22 +14,24 @@ var cam = new addon.FireFlyWrap(10);
 
 console.log( 'num cameras' , cam.getNumCameras())
 console.log("start Camera 0 ", cam.startCamera())
-/*
-cam.autoGain(true);
-cam.autoExposure(true);
-cam.autoWhiteBalance(true);
-cam.triggerOff(false);//True uses the cable
-*/
-// below syncs the projector with the white frame
-cam.autoGain(false);
-cam.autoExposure(false);
-cam.autoWhiteBalance(false);
-cam.triggerOff(true);//True uses the cable
-cam.frameRate();
-cam.triggerDelay(0.0094)//(0.000)
-cam.gain(2);
-cam.exposure(90);
+var _USE_TRIGGER = false;
 
+if(!_USE_TRIGGER){
+  cam.triggerOff(false);//True uses the cable
+  cam.autoGain(true);
+  cam.autoExposure(true);
+  cam.autoWhiteBalance(true);
+}
+else{
+  cam.autoGain(false);
+  cam.autoExposure(false);
+  cam.autoWhiteBalance(false);
+  cam.triggerOff(true);//True uses the cable
+  cam.frameRate();
+  cam.triggerDelay(0.0094)//(0.000)
+  cam.gain(2);
+  cam.exposure(90);
+}
 http.createServer(function(req, res){
   var request = url.parse(req.url, true);
   var action = request.pathname;
@@ -60,7 +64,6 @@ http.createServer(function(req, res){
       res.end('woops\n' + pic);
     }
     console.log(timer.stop(), ' ms');
-//    if( global.gc ){ global.gc() } //forece garbage collection
 
     console.log(util.inspect(process.memoryUsage()));
 

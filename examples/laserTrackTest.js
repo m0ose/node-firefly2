@@ -1,4 +1,5 @@
 var addon = require('../build/Release/addon');
+//var addon = require('../build/Release/addon');
 var timer = require('../timer.js').timer
 
 var cam = new addon.FireFlyWrap();
