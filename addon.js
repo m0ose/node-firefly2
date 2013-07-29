@@ -1,11 +1,18 @@
-var addon = require('./build/Release/addon');
 
-var obj = new addon.FireFlyWrap(10);
+module.exports = require('./build/Release/addon');
 
 
-console.log( 'num cameras' , obj.getNumCameras())
+
+/*
+ * 
+ * 
+ *
+ var obj = new addon.FireFlyWrap(10);
+
+ console.log( 'num cameras' , obj.getNumCameras())
 console.log("start Camera 0 ", obj.startCamera())
 console.log( obj.getCamInfo() )
+
 console.log("auto gain is ", obj.autoGain(true) )
 console.log("auto gain is ", obj.autoGain(false) )
 console.log("auto exposure is ", obj.autoExposure(true) )
@@ -24,3 +31,6 @@ console.log( "take photo ", pic )
 console.log( "take grey photo", obj.takePhoto('rgb') )
 console.log(obj.getWidth(), obj.getHeight())
 console.log("pic length",pic.length, pic[1])
+
+return obj
+*/
