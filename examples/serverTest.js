@@ -1,5 +1,5 @@
 
-var addon = require('../build/Release/addon');
+var addon = require('node-firefly2');
 //var addon = require('node-firefly2')
 var fs = require('fs');
 var http = require('http');
