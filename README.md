@@ -21,7 +21,7 @@ Intallation:
 Example:
 --------
 
-        var addon = require('../build/Release/addon');
+        var addon = require('node-firefly2');
         var fs = require('fs');
         var sys = require('sys');
         var Png = require('png').Png;
