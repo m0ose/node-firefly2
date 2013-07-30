@@ -137,6 +137,11 @@ Handle<Value> FireFlyWrap::startCamera(const Arguments& args) {
 
     //PrintCameraInfo(&camInfo);
 
+    g_Error = g_camera.SetVideoModeAndFrameRate( VIDEOMODE_640x480Y8 , FRAMERATE_30 );
+    if (g_Error != PGRERROR_OK){
+        return scope.Close(False());
+    }
+    
     // Start capturing images
     g_Error = g_camera.StartCapture();
     if (g_Error != PGRERROR_OK)
@@ -144,9 +149,10 @@ Handle<Value> FireFlyWrap::startCamera(const Arguments& args) {
         return scope.Close(Number::New(-1));
     }
 
-    autoOnOff(GAIN, false);                               //turn off autogain
-    autoOnOff(SHUTTER, false);                            //turn off autoexposure
+    //autoOnOff(GAIN, false);                               //turn off autogain
+    //autoOnOff(SHUTTER, false);                            //turn off autoexposure
 
+    
     return scope.Close(Number::New(1));
 
 }
@@ -189,7 +195,7 @@ Handle<Value> FireFlyWrap::takePhoto(const Arguments& args) {
     Image rawImage;
     
     PixelFormat buf_type = PIXEL_FORMAT_RGB8;
-  /*  if (args.Length() >= 1 ) {
+    if (args.Length() >= 1 ) {
         if (!args[0]->IsString())
             return VException("first argument must be 'rgb', 'bgr', or 'rgba' .");
 
@@ -210,7 +216,7 @@ Handle<Value> FireFlyWrap::takePhoto(const Arguments& args) {
         else
             return VException("first argument must be 'rgb', 'bgr', or 'rgba' .");
     }
-    */
+    
     // Retrieve an image
     g_Error = g_camera.RetrieveBuffer( &rawImage );
     if (g_Error != PGRERROR_OK)

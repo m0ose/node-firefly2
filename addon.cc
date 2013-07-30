@@ -4,7 +4,6 @@
 #include "fireflywrap.h"
 using namespace v8;
 
-
 void InitAll(Handle<Object> exports) {
     FireFlyWrap::Init(exports);
 }
