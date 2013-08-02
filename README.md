@@ -63,8 +63,8 @@ API:
 
 CHANGES:
 -------
-*2013/7/20 : Started this project on linux only.
-*2013/8/2 : Complete rewrite in order to get it to work on Windows. A bi-product is that the code is much cleaner.
+*  2013/7/20 : Started this project on linux only.
+*  2013/8/2 : Complete rewrite in order to get it to work on Windows. A bi-product is that the code is much cleaner.
 
 
 
