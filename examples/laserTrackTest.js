@@ -1,9 +1,9 @@
-var addon = require('node-firefly2');
-//var addon = require('../build/Release/addon');
+//var addon = require('node-firefly2');
+var addon = require('../build/Release/addon');
 
 var timer = require('../timer.js').timer
 
-var cam = new addon.FireFlyWrap();
+var cam = new addon();
 console.log( 'num cameras' , cam.getNumCameras())
 console.log("start Camera 0 ", cam.startCamera())
 

@@ -10,7 +10,7 @@ var PNG = require('pngjs').PNG;
 var http = require('http');
 
 
-var cam = new addon.FireFlyWrap();
+var cam = new addon();
 console.log( 'num cameras' , cam.getNumCameras())
 console.log("start Camera 0 ", cam.startCamera())
 
