@@ -10,7 +10,7 @@ Unfortunatly, Point grey requires one to create a login before downloading the s
 
 Intallation:   
 ------------
-<i> Note: this only works on linux at the moment. Maybe someone could help with the windows version. Hint Hint Nudge Nudge. </i>
+<i> Note: Maybe someone could help with the windows version. Hint Hint Nudge Nudge. </i>
 * Download and install Point grey SDK from  http://www.ptgrey.com/support/downloads/downloads_admin/Index.aspx;
  
 * cd node-firefly2;
@@ -59,6 +59,16 @@ API:
 * cam.frameRate(); // sets the fram rate to 90 fps
 * cam.triggerDelay(0.000)//  takes a number in seconds to delay between when the cable trigger fires and when the picture is taken. 
 * cam.takePhoto(); // takes a picture and returns a node::buffer
+
+
+CHANGES:
+-------
+*2013/7/20 : Started this project on linux only.
+*2013/8/2 : Complete rewrite in order to get it to work on Windows. A bi-product is that the code is much cleaner.
+
+
+
+
 
       
 
