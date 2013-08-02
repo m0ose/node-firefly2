@@ -27,7 +27,7 @@ Example:
         var Png = require('png').Png;
         var timer = require('../timer.js').timer
         //
-        var cam = new addon.FireFlyWrap();
+        var cam = new addon();
         console.log( 'num cameras' , cam.getNumCameras())
         console.log("start Camera 0 ", cam.startCamera())
         //
