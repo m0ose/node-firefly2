@@ -10,13 +10,18 @@ Unfortunatly, Point grey requires one to create a login before downloading the s
 
 Intallation:   
 ------------
-<i> Note: Maybe someone could help with the windows version. Hint Hint Nudge Nudge. </i>
+<b> Windows and Linux are supported (more or less). Macintosh is not</b>. Point Grey Research does not support an SDK for mac. If someone can find a version it would be a big help
+
+<i>  It compiled once for me on Windows 7, but I would like to learn how to ship with a binary </i>
+
+* get nodejs and npm, from nodejs.org
+
+* Install node-gyp from https://github.com/TooTallNate/node-gyp. Use his installation instructions, they are good.
+
 * Download and install Point grey SDK from  http://www.ptgrey.com/support/downloads/downloads_admin/Index.aspx;
+
+* npm install node-firefly2
  
-* cd node-firefly2;
-
-* npm install;
-
 
 Example:
 --------
