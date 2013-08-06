@@ -29,8 +29,7 @@ Example:
         var addon = require('node-firefly2');
         var fs = require('fs');
         var sys = require('sys');
-        var Png = require('png').Png;
-        var timer = require('../timer.js').timer
+        var Png = require('png').Png;//note doesn't work on windows. use png-sync instead
         //
         var cam = new addon();
         console.log( 'num cameras' , cam.getNumCameras())
