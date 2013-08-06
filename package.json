@@ -1,26 +1,26 @@
 {
-  "name": "node-firefly2",
-  "description": "node-firefly2",
-  "version": "0.0.3",
-  "author": {
-    "name": "Redfish LLC",
-    "email": "m0ose2@yahoo.com"
-  },
-  "main": "addon.js",
-  "tags": [
-    "pointgrey",
-    "firefly2",
-    "camera"
-  ],
-  "gypfile": true,
-  "scripts": {
-    "preinstall": "node-gyp clean configure build"
-  },
-  "dependencies": {
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/m0ose/node-firefly2.git"
-  },
-  "homepage": "https://github.com/m0ose/node-firefly2"
+    "name": "node-firefly2",
+    "description": "node-firefly2",
+    "version": "0.0.3",
+    "author": {
+        "name": "Redfish LLC",
+        "email": "m0ose2@yahoo.com"
+    },
+    "main": "addon.js",
+    "tags": [
+        "pointgrey",
+        "firefly2",
+        "camera"
+    ],
+    "gypfile": true,
+    "scripts": {
+        "preinstall": "node-gyp clean configure build"
+    },
+    "dependencies": {
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/m0ose/node-firefly2.git"
+    },
+    "homepage": "https://github.com/m0ose/node-firefly2"
 }
