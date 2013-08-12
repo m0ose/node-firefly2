@@ -5,8 +5,6 @@ nodejs binding for firefly 2 camera
 
 Introduction:
 This is a wrapper for the FlyCapture2 Api from Point Grey research, http://www.ptgrey.com/support/downloads/documents/Doxygen/html/annotated.html.
-Currently It only runs only linux, however Windows and Mac "should" be easy to support.
-Unfortunatly, Point grey requires one to create a login before downloading the sdk which is at http://www.ptgrey.com/support/downloads/downloads_admin/Index.aspx
 
 Intallation:   
 ------------
