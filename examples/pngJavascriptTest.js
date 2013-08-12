@@ -9,6 +9,12 @@ var http = require('http');
 
 
 var cam = new addon();
+cam.verbose(false)
+//cam.verbose(true)
+//cam.verbose(false)
+//cam.verbose(true)
+
+
 //cam.verbose(false)
 console.log('num cameras', cam.getNumCameras())
 console.log("start Camera 0 ", cam.startCamera())

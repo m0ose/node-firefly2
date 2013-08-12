@@ -19,10 +19,12 @@ FireFly2::FireFly2()
   CameraInfo cameraInfo;
   Error error;
   pixf = PIXEL_FORMAT_RGB8;
-  verbose = true;
-  
-  cout << "making camera"<<endl;
-  
+  verbose = false;
+
+  if( verbose == true){
+    cout << "making camera"<<endl;
+  }
+
   unsigned int count;
   
   busMgr.GetNumOfCameras(&count);
@@ -52,8 +54,10 @@ FireFly2::FireFly2()
   //TODO look for errors above, if this is not 640 by 480 there will be problems.
   width = image.GetCols();
   height = image.GetRows();
-  
-  cout << "camera made"<<endl;
+
+  if( verbose == true){
+    cout << "camera made"<<endl;
+  }
 }
 
 /*******************************************************************************

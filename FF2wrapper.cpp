@@ -78,7 +78,9 @@ void FF2wrapper::Init() {
 Handle<Value> FF2wrapper::New(const Arguments& args) {
   HandleScope scope;
   FireFly2::getInstance();
-  std::cout <<  " # cameras: "<< FireFly2::getInstance().getNumberOfCameras() << std::endl;
+  if( FireFly2::getInstance().verbose == true){
+    cout <<  " # cameras: "<< FireFly2::getInstance().getNumberOfCameras() << std::endl;
+  }
   FF2wrapper* obj = new FF2wrapper();
   obj->counter_ = args[0]->IsUndefined() ? 0 : args[0]->NumberValue();
   obj->Wrap(args.This());
@@ -155,7 +157,9 @@ Handle<Value> FF2wrapper::takePhoto(const Arguments& args) {
 
 
 Handle<Value> FF2wrapper::getNumCameras(const Arguments& args) {
-  cout << "getNumCameras called" << endl;
+  if( FireFly2::getInstance().verbose == true){
+    cout << "getNumCameras called" << endl;
+  }
   
   HandleScope scope; 
   unsigned int numCams = FireFly2::getInstance().getNumberOfCameras();
@@ -165,8 +169,10 @@ Handle<Value> FF2wrapper::getNumCameras(const Arguments& args) {
 
 
 Handle<Value> FF2wrapper::startCamera(const Arguments& args) {
-  HandleScope scope; 
-  cout << "startCamera called" << endl;
+  HandleScope scope;
+  if( FireFly2::getInstance().verbose == true){
+    cout << "startCamera called" << endl;
+  }
   FireFly2::getInstance().start();
   return scope.Close(True());
 }
@@ -302,14 +308,15 @@ Handle<Value> FF2wrapper::frameRate(const Arguments& args) //)
   
   //Verobse. true prints stuff to the standard output
   Handle<Value>   FF2wrapper::verbose(const Arguments& args)
-{
-  bool on_off = false;
-  if( args[0] == True()){
-    on_off = true;
+  {
+    bool on_off = false;
+    if( args[0] == True()){
+      on_off = true;
+    }
+    FireFly2::getInstance().verbose = on_off;
+    cout << "verbose is " << on_off<<endl;
+    return args[0];
   }
-  FireFly2::getInstance().verbose = on_off;
-  return True();
-}
   
   
   
