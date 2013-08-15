@@ -38,6 +38,7 @@ public:
   int height;
   FlyCapture2::PixelFormat pixf;
   bool verbose;
+  float myTriggerDelay;
 
   void start(void);
   void stop(void);

@@ -19,6 +19,7 @@ FireFly2::FireFly2()
   CameraInfo cameraInfo;
   Error error;
   pixf = PIXEL_FORMAT_RGB8;
+  myTriggerDelay = 0.0;
   verbose = false;
 
   if( verbose == true){
@@ -220,7 +221,13 @@ float FireFly2::triggerDelay(float seconds)
 {
   Property prop;
   Error error;
-  
+  //only set if different from old value, because it takes a frame to set.
+  if( myTriggerDelay == seconds ){
+    if(verbose){cout << "not setting trigger" << endl;}
+    return myTriggerDelay;
+  }
+  if(verbose){ cout << "c++ setting trigger:  "<< myTriggerDelay<< " to " <<seconds << endl;}
+  myTriggerDelay = seconds;
   prop = FlyCapture2::Property(TRIGGER_DELAY);
   
   error = m_pCamera.GetProperty(&prop);

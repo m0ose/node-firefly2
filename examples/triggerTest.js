@@ -18,6 +18,12 @@ cam.exposure(90);
 cam.triggerOff(true);//True is off, waits for hardware trigger
 cam.frameRate();
 cam.triggerDelay(0.000)
+cam.triggerDelay(0.120)
+cam.triggerDelay(0.120)
+cam.triggerDelay(0.120)
+cam.triggerDelay(0.000)
+
+
 
 //take a few just to get it warmed up. might help?
 cam.takePhoto();
