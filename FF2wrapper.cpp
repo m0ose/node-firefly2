@@ -173,6 +173,7 @@ Handle<Value> FF2wrapper::startCamera(const Arguments& args) {
   if( FireFly2::getInstance().verbose == true){
     cout << "startCamera called" << endl;
   }
+  FireFly2::getInstance().stop();
   FireFly2::getInstance().start();
   return scope.Close(True());
 }
