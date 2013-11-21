@@ -20,6 +20,7 @@ Intallation:
 
 * npm install node-firefly2
  
+* NOTE: Compiling node programs on Windows is a horrible experience. If you have another version of visual studio other than 2010. It is <u>very</u> likely you will need to download the source and then type <i> node-gyp rebuild --msvs_version=2012 </i> from the base of the source directory into the command prompt.
 
 Example:
 --------
