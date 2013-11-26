@@ -28,15 +28,10 @@ void FF2wrapper::Init() {
   
   tpl->PrototypeTemplate()->Set(String::NewSymbol("getNumCameras"),
 						  FunctionTemplate::New(getNumCameras)->GetFunction());
-  
   tpl->PrototypeTemplate()->Set(String::NewSymbol("takePhoto"),
 				FunctionTemplate::New(takePhoto)->GetFunction());
-  
   tpl->PrototypeTemplate()->Set(String::NewSymbol("startCamera"),
 						  FunctionTemplate::New(startCamera)->GetFunction());
-
-  tpl->PrototypeTemplate()->Set(String::NewSymbol("stopCamera"),
-	  FunctionTemplate::New(stopCamera)->GetFunction());
   
   tpl->PrototypeTemplate()->Set(String::NewSymbol("getWidth"),
 						  FunctionTemplate::New(getWidth)->GetFunction());
@@ -181,15 +176,6 @@ Handle<Value> FF2wrapper::startCamera(const Arguments& args) {
   FireFly2::getInstance().stop();
   FireFly2::getInstance().start();
   return scope.Close(True());
-}
-
-Handle<Value> FF2wrapper::stopCamera(const Arguments& args) {
-	HandleScope scope;
-	if (FireFly2::getInstance().verbose == true){
-		cout << "stopCamera called" << endl;
-	}
-	FireFly2::getInstance().stop();
-	return scope.Close(True());
 }
 
 

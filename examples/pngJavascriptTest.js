@@ -9,7 +9,7 @@ var http = require('http');
 
 
 var cam = new addon();
-cam.verbose(false)
+cam.verbose(true)
 //cam.verbose(true)
 //cam.verbose(false)
 //cam.verbose(true)
@@ -51,6 +51,13 @@ for (var j = 0; j < pics.length; j++) {
 }
 console.log("converting with javascript-png", timer.stop())
 
+setInterval( function(){
+ if( !cam.takePhoto('rgba') )
+    {  console.log('errors')};
+    cam.startCamera()// there is a bug when windows falls asleep, that messes up the pictures for some reason. this helps fix it by restarting the camera every 30 seconds
+    console.log('.')
+ }, 30000)
+
 //
 //  start a server on 127.0.0.1:3000
 //
@@ -74,4 +81,6 @@ var server = http.createServer(function (req, res) {
     pnger.pipe(res);
 });
 server.listen(3000);
+
+
 console.log(" server listening on port 127.0.0.1:3000")

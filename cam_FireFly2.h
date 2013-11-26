@@ -39,6 +39,7 @@ public:
   FlyCapture2::PixelFormat pixf;
   bool verbose;
   float myTriggerDelay;
+  unsigned int triggerSource;
 
   void start(void);
   void stop(void);

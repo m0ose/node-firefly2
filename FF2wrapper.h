@@ -20,8 +20,6 @@ private:
   static v8::Handle<v8::Value>   getNumCameras(const v8::Arguments& args);
   
   static v8::Handle<v8::Value> startCamera(const v8::Arguments& args);
-  static v8::Handle<v8::Value> stopCamera(const v8::Arguments& args);
-
   static v8::Handle<v8::Value> getCamInfo(const v8::Arguments& args);
   static v8::Handle<v8::Value> takePhoto(const v8::Arguments& args);
   static v8::Handle<v8::Value> getWidth(const v8::Arguments& args);

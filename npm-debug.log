@@ -1,0 +1,374 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'publish' ]
+2 info using npm@1.3.11
+3 info using node@v0.10.20
+4 verbose node symlink C:\Program Files\nodejs\\node.exe
+5 verbose publish [ '.' ]
+6 verbose cache add [ '.', null ]
+7 verbose cache add name=undefined spec="." args=[".",null]
+8 verbose parsed url { protocol: null,
+8 verbose parsed url   slashes: null,
+8 verbose parsed url   auth: null,
+8 verbose parsed url   host: null,
+8 verbose parsed url   port: null,
+8 verbose parsed url   hostname: null,
+8 verbose parsed url   hash: null,
+8 verbose parsed url   search: null,
+8 verbose parsed url   query: null,
+8 verbose parsed url   pathname: '.',
+8 verbose parsed url   path: '.',
+8 verbose parsed url   href: '.' }
+9 silly lockFile 3a52ce78- .
+10 verbose lock . C:\Users\dood\AppData\Roaming\npm-cache\3a52ce78-.lock
+11 verbose tar pack [ 'C:\\Users\\dood\\AppData\\Local\\Temp\\npm-4388--w4tgrjf\\1385060147779-0.12819811259396374\\tmp.tgz',
+11 verbose tar pack   '.' ]
+12 verbose tarball C:\Users\dood\AppData\Local\Temp\npm-4388--w4tgrjf\1385060147779-0.12819811259396374\tmp.tgz
+13 verbose folder .
+14 silly lockFile 1f1177db-tar tar://.
+15 verbose lock tar://. C:\Users\dood\AppData\Roaming\npm-cache\1f1177db-tar.lock
+16 silly lockFile 6ebd74bc-7779-0-12819811259396374-tmp-tgz tar://C:\Users\dood\AppData\Local\Temp\npm-4388--w4tgrjf\1385060147779-0.12819811259396374\tmp.tgz
+17 verbose lock tar://C:\Users\dood\AppData\Local\Temp\npm-4388--w4tgrjf\1385060147779-0.12819811259396374\tmp.tgz C:\Users\dood\AppData\Roaming\npm-cache\6ebd74bc-7779-0-12819811259396374-tmp-tgz.lock
+18 silly lockFile 1f1177db-tar tar://.
+19 silly lockFile 1f1177db-tar tar://.
+20 silly lockFile 6ebd74bc-7779-0-12819811259396374-tmp-tgz tar://C:\Users\dood\AppData\Local\Temp\npm-4388--w4tgrjf\1385060147779-0.12819811259396374\tmp.tgz
+21 silly lockFile 6ebd74bc-7779-0-12819811259396374-tmp-tgz tar://C:\Users\dood\AppData\Local\Temp\npm-4388--w4tgrjf\1385060147779-0.12819811259396374\tmp.tgz
+22 verbose tar unpack C:\Users\dood\AppData\Local\Temp\npm-4388--w4tgrjf\1385060147779-0.12819811259396374\tmp.tgz
+23 silly lockFile c5193e2d-7779-0-12819811259396374-package tar://C:\Users\dood\AppData\Local\Temp\npm-4388--w4tgrjf\1385060147779-0.12819811259396374\package
+24 verbose lock tar://C:\Users\dood\AppData\Local\Temp\npm-4388--w4tgrjf\1385060147779-0.12819811259396374\package C:\Users\dood\AppData\Roaming\npm-cache\c5193e2d-7779-0-12819811259396374-package.lock
+25 silly lockFile 6ebd74bc-7779-0-12819811259396374-tmp-tgz tar://C:\Users\dood\AppData\Local\Temp\npm-4388--w4tgrjf\1385060147779-0.12819811259396374\tmp.tgz
+26 verbose lock tar://C:\Users\dood\AppData\Local\Temp\npm-4388--w4tgrjf\1385060147779-0.12819811259396374\tmp.tgz C:\Users\dood\AppData\Roaming\npm-cache\6ebd74bc-7779-0-12819811259396374-tmp-tgz.lock
+27 silly gunzTarPerm modes [ '755', '644' ]
+28 silly gunzTarPerm extractEntry package.json
+29 silly gunzTarPerm modified mode [ 'package.json', 438, 420 ]
+30 silly gunzTarPerm extractEntry README.md
+31 silly gunzTarPerm modified mode [ 'README.md', 438, 420 ]
+32 silly gunzTarPerm extractEntry LICENSE
+33 silly gunzTarPerm modified mode [ 'LICENSE', 438, 420 ]
+34 silly gunzTarPerm extractEntry timer.js
+35 silly gunzTarPerm modified mode [ 'timer.js', 438, 420 ]
+36 silly gunzTarPerm extractEntry addon.js
+37 silly gunzTarPerm modified mode [ 'addon.js', 438, 420 ]
+38 silly gunzTarPerm extractEntry cam_FireFly2.h
+39 silly gunzTarPerm modified mode [ 'cam_FireFly2.h', 438, 420 ]
+40 silly gunzTarPerm extractEntry examples/basicTest.js
+41 silly gunzTarPerm modified mode [ 'examples/basicTest.js', 438, 420 ]
+42 silly gunzTarPerm extractEntry examples/canvasTest.js
+43 silly gunzTarPerm modified mode [ 'examples/canvasTest.js', 438, 420 ]
+44 silly gunzTarPerm extractEntry examples/laserTrackTest.js
+45 silly gunzTarPerm modified mode [ 'examples/laserTrackTest.js', 438, 420 ]
+46 silly gunzTarPerm extractEntry examples/pngJavascriptTest.js
+47 silly gunzTarPerm modified mode [ 'examples/pngJavascriptTest.js', 438, 420 ]
+48 silly gunzTarPerm extractEntry examples/pngJavascriptTest2.js
+49 silly gunzTarPerm modified mode [ 'examples/pngJavascriptTest2.js', 438, 420 ]
+50 silly gunzTarPerm extractEntry examples/pngTest.js
+51 silly gunzTarPerm modified mode [ 'examples/pngTest.js', 438, 420 ]
+52 silly gunzTarPerm extractEntry examples/serverTest.js
+53 silly gunzTarPerm modified mode [ 'examples/serverTest.js', 438, 420 ]
+54 silly gunzTarPerm extractEntry examples/triggerTest.js
+55 silly gunzTarPerm modified mode [ 'examples/triggerTest.js', 438, 420 ]
+56 silly gunzTarPerm extractEntry examples/out.png
+57 silly gunzTarPerm modified mode [ 'examples/out.png', 438, 420 ]
+58 silly gunzTarPerm extractEntry FF2wrapper.cpp
+59 silly gunzTarPerm modified mode [ 'FF2wrapper.cpp', 438, 420 ]
+60 silly gunzTarPerm extractEntry addon.cc
+61 silly gunzTarPerm modified mode [ 'addon.cc', 438, 420 ]
+62 silly gunzTarPerm extractEntry globals.h
+63 silly gunzTarPerm modified mode [ 'globals.h', 438, 420 ]
+64 silly gunzTarPerm extractEntry binding.gyp
+65 silly gunzTarPerm modified mode [ 'binding.gyp', 438, 420 ]
+66 silly gunzTarPerm extractEntry build/addon.vcxproj
+67 silly gunzTarPerm modified mode [ 'build/addon.vcxproj', 438, 420 ]
+68 silly gunzTarPerm extractEntry build/addon.vcxproj.filters
+69 silly gunzTarPerm modified mode [ 'build/addon.vcxproj.filters', 438, 420 ]
+70 silly gunzTarPerm extractEntry build/binding.opensdf
+71 silly gunzTarPerm modified mode [ 'build/binding.opensdf', 438, 420 ]
+72 silly gunzTarPerm extractEntry build/binding.sdf
+73 silly gunzTarPerm modified mode [ 'build/binding.sdf', 438, 420 ]
+74 silly gunzTarPerm extractEntry build/binding.sln
+75 silly gunzTarPerm modified mode [ 'build/binding.sln', 438, 420 ]
+76 silly gunzTarPerm extractEntry build/binding.v12.suo
+77 silly gunzTarPerm modified mode [ 'build/binding.v12.suo', 438, 420 ]
+78 silly gunzTarPerm extractEntry build/config.gypi
+79 silly gunzTarPerm modified mode [ 'build/config.gypi', 438, 420 ]
+80 silly gunzTarPerm extractEntry build/Release/addon.exp
+81 silly gunzTarPerm modified mode [ 'build/Release/addon.exp', 438, 420 ]
+82 silly gunzTarPerm extractEntry build/Release/addon.lib
+83 silly gunzTarPerm modified mode [ 'build/Release/addon.lib', 438, 420 ]
+84 silly gunzTarPerm extractEntry build/Release/addon.node
+85 silly gunzTarPerm modified mode [ 'build/Release/addon.node', 438, 420 ]
+86 silly gunzTarPerm extractEntry build/Release/addon.pdb
+87 silly gunzTarPerm modified mode [ 'build/Release/addon.pdb', 438, 420 ]
+88 silly gunzTarPerm extractEntry build/Release/obj/addon/addon.log
+89 silly gunzTarPerm modified mode [ 'build/Release/obj/addon/addon.log', 438, 420 ]
+90 silly gunzTarPerm extractEntry build/Release/obj/addon/addon.obj
+91 silly gunzTarPerm modified mode [ 'build/Release/obj/addon/addon.obj', 438, 420 ]
+92 silly gunzTarPerm extractEntry build/Release/obj/addon/addon.tlog/addon.lastbuildstate
+93 silly gunzTarPerm modified mode [ 'build/Release/obj/addon/addon.tlog/addon.lastbuildstate',
+93 silly gunzTarPerm   438,
+93 silly gunzTarPerm   420 ]
+94 silly gunzTarPerm extractEntry build/Release/obj/addon/addon.tlog/addon.write.1u.tlog
+95 silly gunzTarPerm modified mode [ 'build/Release/obj/addon/addon.tlog/addon.write.1u.tlog',
+95 silly gunzTarPerm   438,
+95 silly gunzTarPerm   420 ]
+96 silly gunzTarPerm extractEntry build/Release/obj/addon/addon.tlog/cl.command.1.tlog
+97 silly gunzTarPerm modified mode [ 'build/Release/obj/addon/addon.tlog/cl.command.1.tlog',
+97 silly gunzTarPerm   438,
+97 silly gunzTarPerm   420 ]
+98 silly gunzTarPerm extractEntry build/Release/obj/addon/addon.tlog/CL.read.1.tlog
+99 silly gunzTarPerm modified mode [ 'build/Release/obj/addon/addon.tlog/CL.read.1.tlog', 438, 420 ]
+100 silly gunzTarPerm extractEntry build/Release/obj/addon/addon.tlog/CL.write.1.tlog
+101 silly gunzTarPerm modified mode [ 'build/Release/obj/addon/addon.tlog/CL.write.1.tlog',
+101 silly gunzTarPerm   438,
+101 silly gunzTarPerm   420 ]
+102 silly gunzTarPerm extractEntry build/Release/obj/addon/addon.tlog/link.command.1.tlog
+103 silly gunzTarPerm modified mode [ 'build/Release/obj/addon/addon.tlog/link.command.1.tlog',
+103 silly gunzTarPerm   438,
+103 silly gunzTarPerm   420 ]
+104 silly gunzTarPerm extractEntry build/Release/obj/addon/addon.tlog/link.read.1.tlog
+105 silly gunzTarPerm modified mode [ 'build/Release/obj/addon/addon.tlog/link.read.1.tlog',
+105 silly gunzTarPerm   438,
+105 silly gunzTarPerm   420 ]
+106 silly gunzTarPerm extractEntry build/Release/obj/addon/addon.tlog/link.write.1.tlog
+107 silly gunzTarPerm modified mode [ 'build/Release/obj/addon/addon.tlog/link.write.1.tlog',
+107 silly gunzTarPerm   438,
+107 silly gunzTarPerm   420 ]
+108 silly gunzTarPerm extractEntry build/Release/obj/addon/cam_FireFly2.obj
+109 silly gunzTarPerm modified mode [ 'build/Release/obj/addon/cam_FireFly2.obj', 438, 420 ]
+110 silly gunzTarPerm extractEntry build/Release/obj/addon/FF2wrapper.obj
+111 silly gunzTarPerm modified mode [ 'build/Release/obj/addon/FF2wrapper.obj', 438, 420 ]
+112 silly gunzTarPerm extractEntry build/Release/obj/addon/vc120.pdb
+113 silly gunzTarPerm modified mode [ 'build/Release/obj/addon/vc120.pdb', 438, 420 ]
+114 silly gunzTarPerm extractEntry cam_FireFly2.cpp
+115 silly gunzTarPerm modified mode [ 'cam_FireFly2.cpp', 438, 420 ]
+116 silly gunzTarPerm extractEntry pics/pngjs4.png
+117 silly gunzTarPerm modified mode [ 'pics/pngjs4.png', 438, 420 ]
+118 silly gunzTarPerm extractEntry pics/blank.txt
+119 silly gunzTarPerm modified mode [ 'pics/blank.txt', 438, 420 ]
+120 silly gunzTarPerm extractEntry pics/pngjs1.png
+121 silly gunzTarPerm modified mode [ 'pics/pngjs1.png', 438, 420 ]
+122 silly gunzTarPerm extractEntry pics/pngjs2.png
+123 silly gunzTarPerm modified mode [ 'pics/pngjs2.png', 438, 420 ]
+124 silly gunzTarPerm extractEntry pics/pngjs3.png
+125 silly gunzTarPerm modified mode [ 'pics/pngjs3.png', 438, 420 ]
+126 silly gunzTarPerm extractEntry pics/pngjs0.png
+127 silly gunzTarPerm modified mode [ 'pics/pngjs0.png', 438, 420 ]
+128 silly gunzTarPerm extractEntry pics/pngjs5.png
+129 silly gunzTarPerm modified mode [ 'pics/pngjs5.png', 438, 420 ]
+130 silly gunzTarPerm extractEntry pics/pngjs6.png
+131 silly gunzTarPerm modified mode [ 'pics/pngjs6.png', 438, 420 ]
+132 silly gunzTarPerm extractEntry pics/pngjs7.png
+133 silly gunzTarPerm modified mode [ 'pics/pngjs7.png', 438, 420 ]
+134 silly gunzTarPerm extractEntry pics/pngjs8.png
+135 silly gunzTarPerm modified mode [ 'pics/pngjs8.png', 438, 420 ]
+136 silly gunzTarPerm extractEntry pics/pngjs9.png
+137 silly gunzTarPerm modified mode [ 'pics/pngjs9.png', 438, 420 ]
+138 silly gunzTarPerm extractEntry FF2wrapper.h
+139 silly gunzTarPerm modified mode [ 'FF2wrapper.h', 438, 420 ]
+140 silly lockFile c5193e2d-7779-0-12819811259396374-package tar://C:\Users\dood\AppData\Local\Temp\npm-4388--w4tgrjf\1385060147779-0.12819811259396374\package
+141 silly lockFile c5193e2d-7779-0-12819811259396374-package tar://C:\Users\dood\AppData\Local\Temp\npm-4388--w4tgrjf\1385060147779-0.12819811259396374\package
+142 silly lockFile 6ebd74bc-7779-0-12819811259396374-tmp-tgz tar://C:\Users\dood\AppData\Local\Temp\npm-4388--w4tgrjf\1385060147779-0.12819811259396374\tmp.tgz
+143 silly lockFile 6ebd74bc-7779-0-12819811259396374-tmp-tgz tar://C:\Users\dood\AppData\Local\Temp\npm-4388--w4tgrjf\1385060147779-0.12819811259396374\tmp.tgz
+144 verbose tar pack [ 'C:\\Users\\dood\\AppData\\Roaming\\npm-cache\\node-firefly2\\0.0.41\\package.tgz',
+144 verbose tar pack   'C:\\Users\\dood\\AppData\\Local\\Temp\\npm-4388--w4tgrjf\\1385060147779-0.12819811259396374\\package' ]
+145 verbose tarball C:\Users\dood\AppData\Roaming\npm-cache\node-firefly2\0.0.41\package.tgz
+146 verbose folder C:\Users\dood\AppData\Local\Temp\npm-4388--w4tgrjf\1385060147779-0.12819811259396374\package
+147 silly lockFile c5193e2d-7779-0-12819811259396374-package tar://C:\Users\dood\AppData\Local\Temp\npm-4388--w4tgrjf\1385060147779-0.12819811259396374\package
+148 verbose lock tar://C:\Users\dood\AppData\Local\Temp\npm-4388--w4tgrjf\1385060147779-0.12819811259396374\package C:\Users\dood\AppData\Roaming\npm-cache\c5193e2d-7779-0-12819811259396374-package.lock
+149 silly lockFile 8c2a0e56-node-firefly2-0-0-41-package-tgz tar://C:\Users\dood\AppData\Roaming\npm-cache\node-firefly2\0.0.41\package.tgz
+150 verbose lock tar://C:\Users\dood\AppData\Roaming\npm-cache\node-firefly2\0.0.41\package.tgz C:\Users\dood\AppData\Roaming\npm-cache\8c2a0e56-node-firefly2-0-0-41-package-tgz.lock
+151 silly lockFile c5193e2d-7779-0-12819811259396374-package tar://C:\Users\dood\AppData\Local\Temp\npm-4388--w4tgrjf\1385060147779-0.12819811259396374\package
+152 silly lockFile c5193e2d-7779-0-12819811259396374-package tar://C:\Users\dood\AppData\Local\Temp\npm-4388--w4tgrjf\1385060147779-0.12819811259396374\package
+153 silly lockFile 8c2a0e56-node-firefly2-0-0-41-package-tgz tar://C:\Users\dood\AppData\Roaming\npm-cache\node-firefly2\0.0.41\package.tgz
+154 silly lockFile 8c2a0e56-node-firefly2-0-0-41-package-tgz tar://C:\Users\dood\AppData\Roaming\npm-cache\node-firefly2\0.0.41\package.tgz
+155 silly lockFile c7d2d870-che-node-firefly2-0-0-41-package C:\Users\dood\AppData\Roaming\npm-cache\node-firefly2\0.0.41\package
+156 verbose lock C:\Users\dood\AppData\Roaming\npm-cache\node-firefly2\0.0.41\package C:\Users\dood\AppData\Roaming\npm-cache\c7d2d870-che-node-firefly2-0-0-41-package.lock
+157 silly lockFile c7d2d870-che-node-firefly2-0-0-41-package C:\Users\dood\AppData\Roaming\npm-cache\node-firefly2\0.0.41\package
+158 silly lockFile c7d2d870-che-node-firefly2-0-0-41-package C:\Users\dood\AppData\Roaming\npm-cache\node-firefly2\0.0.41\package
+159 verbose tar unpack C:\Users\dood\AppData\Roaming\npm-cache\node-firefly2\0.0.41\package.tgz
+160 silly lockFile 1d210137-che-node-firefly2-0-0-41-package tar://C:\Users\dood\AppData\Roaming\npm-cache\node-firefly2\0.0.41\package
+161 verbose lock tar://C:\Users\dood\AppData\Roaming\npm-cache\node-firefly2\0.0.41\package C:\Users\dood\AppData\Roaming\npm-cache\1d210137-che-node-firefly2-0-0-41-package.lock
+162 silly lockFile 8c2a0e56-node-firefly2-0-0-41-package-tgz tar://C:\Users\dood\AppData\Roaming\npm-cache\node-firefly2\0.0.41\package.tgz
+163 verbose lock tar://C:\Users\dood\AppData\Roaming\npm-cache\node-firefly2\0.0.41\package.tgz C:\Users\dood\AppData\Roaming\npm-cache\8c2a0e56-node-firefly2-0-0-41-package-tgz.lock
+164 silly gunzTarPerm modes [ '755', '644' ]
+165 silly gunzTarPerm extractEntry package.json
+166 silly gunzTarPerm modified mode [ 'package.json', 438, 420 ]
+167 silly gunzTarPerm extractEntry README.md
+168 silly gunzTarPerm modified mode [ 'README.md', 438, 420 ]
+169 silly gunzTarPerm extractEntry LICENSE
+170 silly gunzTarPerm modified mode [ 'LICENSE', 438, 420 ]
+171 silly gunzTarPerm extractEntry timer.js
+172 silly gunzTarPerm modified mode [ 'timer.js', 438, 420 ]
+173 silly gunzTarPerm extractEntry addon.js
+174 silly gunzTarPerm modified mode [ 'addon.js', 438, 420 ]
+175 silly gunzTarPerm extractEntry cam_FireFly2.h
+176 silly gunzTarPerm modified mode [ 'cam_FireFly2.h', 438, 420 ]
+177 silly gunzTarPerm extractEntry examples/basicTest.js
+178 silly gunzTarPerm modified mode [ 'examples/basicTest.js', 438, 420 ]
+179 silly gunzTarPerm extractEntry examples/canvasTest.js
+180 silly gunzTarPerm modified mode [ 'examples/canvasTest.js', 438, 420 ]
+181 silly gunzTarPerm extractEntry examples/laserTrackTest.js
+182 silly gunzTarPerm modified mode [ 'examples/laserTrackTest.js', 438, 420 ]
+183 silly gunzTarPerm extractEntry examples/pngJavascriptTest.js
+184 silly gunzTarPerm modified mode [ 'examples/pngJavascriptTest.js', 438, 420 ]
+185 silly gunzTarPerm extractEntry examples/pngJavascriptTest2.js
+186 silly gunzTarPerm modified mode [ 'examples/pngJavascriptTest2.js', 438, 420 ]
+187 silly gunzTarPerm extractEntry examples/pngTest.js
+188 silly gunzTarPerm modified mode [ 'examples/pngTest.js', 438, 420 ]
+189 silly gunzTarPerm extractEntry examples/serverTest.js
+190 silly gunzTarPerm modified mode [ 'examples/serverTest.js', 438, 420 ]
+191 silly gunzTarPerm extractEntry examples/triggerTest.js
+192 silly gunzTarPerm modified mode [ 'examples/triggerTest.js', 438, 420 ]
+193 silly gunzTarPerm extractEntry examples/out.png
+194 silly gunzTarPerm modified mode [ 'examples/out.png', 438, 420 ]
+195 silly gunzTarPerm extractEntry addon.cc
+196 silly gunzTarPerm modified mode [ 'addon.cc', 438, 420 ]
+197 silly gunzTarPerm extractEntry FF2wrapper.h
+198 silly gunzTarPerm modified mode [ 'FF2wrapper.h', 438, 420 ]
+199 silly gunzTarPerm extractEntry globals.h
+200 silly gunzTarPerm modified mode [ 'globals.h', 438, 420 ]
+201 silly gunzTarPerm extractEntry binding.gyp
+202 silly gunzTarPerm modified mode [ 'binding.gyp', 438, 420 ]
+203 silly gunzTarPerm extractEntry build/addon.vcxproj
+204 silly gunzTarPerm modified mode [ 'build/addon.vcxproj', 438, 420 ]
+205 silly gunzTarPerm extractEntry build/addon.vcxproj.filters
+206 silly gunzTarPerm modified mode [ 'build/addon.vcxproj.filters', 438, 420 ]
+207 silly gunzTarPerm extractEntry build/binding.opensdf
+208 silly gunzTarPerm modified mode [ 'build/binding.opensdf', 438, 420 ]
+209 silly gunzTarPerm extractEntry build/binding.sdf
+210 silly gunzTarPerm modified mode [ 'build/binding.sdf', 438, 420 ]
+211 silly gunzTarPerm extractEntry build/binding.sln
+212 silly gunzTarPerm modified mode [ 'build/binding.sln', 438, 420 ]
+213 silly gunzTarPerm extractEntry build/binding.v12.suo
+214 silly gunzTarPerm modified mode [ 'build/binding.v12.suo', 438, 420 ]
+215 silly gunzTarPerm extractEntry build/config.gypi
+216 silly gunzTarPerm modified mode [ 'build/config.gypi', 438, 420 ]
+217 silly gunzTarPerm extractEntry build/Release/addon.exp
+218 silly gunzTarPerm modified mode [ 'build/Release/addon.exp', 438, 420 ]
+219 silly gunzTarPerm extractEntry build/Release/addon.lib
+220 silly gunzTarPerm modified mode [ 'build/Release/addon.lib', 438, 420 ]
+221 silly gunzTarPerm extractEntry build/Release/addon.node
+222 silly gunzTarPerm modified mode [ 'build/Release/addon.node', 438, 420 ]
+223 silly gunzTarPerm extractEntry build/Release/addon.pdb
+224 silly gunzTarPerm modified mode [ 'build/Release/addon.pdb', 438, 420 ]
+225 silly gunzTarPerm extractEntry build/Release/obj/addon/addon.log
+226 silly gunzTarPerm modified mode [ 'build/Release/obj/addon/addon.log', 438, 420 ]
+227 silly gunzTarPerm extractEntry build/Release/obj/addon/addon.obj
+228 silly gunzTarPerm modified mode [ 'build/Release/obj/addon/addon.obj', 438, 420 ]
+229 silly gunzTarPerm extractEntry build/Release/obj/addon/addon.tlog/addon.lastbuildstate
+230 silly gunzTarPerm modified mode [ 'build/Release/obj/addon/addon.tlog/addon.lastbuildstate',
+230 silly gunzTarPerm   438,
+230 silly gunzTarPerm   420 ]
+231 silly gunzTarPerm extractEntry build/Release/obj/addon/addon.tlog/addon.write.1u.tlog
+232 silly gunzTarPerm modified mode [ 'build/Release/obj/addon/addon.tlog/addon.write.1u.tlog',
+232 silly gunzTarPerm   438,
+232 silly gunzTarPerm   420 ]
+233 silly gunzTarPerm extractEntry build/Release/obj/addon/addon.tlog/cl.command.1.tlog
+234 silly gunzTarPerm modified mode [ 'build/Release/obj/addon/addon.tlog/cl.command.1.tlog',
+234 silly gunzTarPerm   438,
+234 silly gunzTarPerm   420 ]
+235 silly gunzTarPerm extractEntry build/Release/obj/addon/addon.tlog/CL.read.1.tlog
+236 silly gunzTarPerm modified mode [ 'build/Release/obj/addon/addon.tlog/CL.read.1.tlog', 438, 420 ]
+237 silly gunzTarPerm extractEntry build/Release/obj/addon/addon.tlog/CL.write.1.tlog
+238 silly gunzTarPerm modified mode [ 'build/Release/obj/addon/addon.tlog/CL.write.1.tlog',
+238 silly gunzTarPerm   438,
+238 silly gunzTarPerm   420 ]
+239 silly gunzTarPerm extractEntry build/Release/obj/addon/addon.tlog/link.command.1.tlog
+240 silly gunzTarPerm modified mode [ 'build/Release/obj/addon/addon.tlog/link.command.1.tlog',
+240 silly gunzTarPerm   438,
+240 silly gunzTarPerm   420 ]
+241 silly gunzTarPerm extractEntry build/Release/obj/addon/addon.tlog/link.read.1.tlog
+242 silly gunzTarPerm modified mode [ 'build/Release/obj/addon/addon.tlog/link.read.1.tlog',
+242 silly gunzTarPerm   438,
+242 silly gunzTarPerm   420 ]
+243 silly gunzTarPerm extractEntry build/Release/obj/addon/addon.tlog/link.write.1.tlog
+244 silly gunzTarPerm modified mode [ 'build/Release/obj/addon/addon.tlog/link.write.1.tlog',
+244 silly gunzTarPerm   438,
+244 silly gunzTarPerm   420 ]
+245 silly gunzTarPerm extractEntry build/Release/obj/addon/cam_FireFly2.obj
+246 silly gunzTarPerm modified mode [ 'build/Release/obj/addon/cam_FireFly2.obj', 438, 420 ]
+247 silly gunzTarPerm extractEntry build/Release/obj/addon/FF2wrapper.obj
+248 silly gunzTarPerm modified mode [ 'build/Release/obj/addon/FF2wrapper.obj', 438, 420 ]
+249 silly gunzTarPerm extractEntry build/Release/obj/addon/vc120.pdb
+250 silly gunzTarPerm modified mode [ 'build/Release/obj/addon/vc120.pdb', 438, 420 ]
+251 silly gunzTarPerm extractEntry pics/pngjs4.png
+252 silly gunzTarPerm modified mode [ 'pics/pngjs4.png', 438, 420 ]
+253 silly gunzTarPerm extractEntry pics/blank.txt
+254 silly gunzTarPerm modified mode [ 'pics/blank.txt', 438, 420 ]
+255 silly gunzTarPerm extractEntry pics/pngjs1.png
+256 silly gunzTarPerm modified mode [ 'pics/pngjs1.png', 438, 420 ]
+257 silly gunzTarPerm extractEntry pics/pngjs2.png
+258 silly gunzTarPerm modified mode [ 'pics/pngjs2.png', 438, 420 ]
+259 silly gunzTarPerm extractEntry pics/pngjs3.png
+260 silly gunzTarPerm modified mode [ 'pics/pngjs3.png', 438, 420 ]
+261 silly gunzTarPerm extractEntry pics/pngjs0.png
+262 silly gunzTarPerm modified mode [ 'pics/pngjs0.png', 438, 420 ]
+263 silly gunzTarPerm extractEntry pics/pngjs5.png
+264 silly gunzTarPerm modified mode [ 'pics/pngjs5.png', 438, 420 ]
+265 silly gunzTarPerm extractEntry pics/pngjs6.png
+266 silly gunzTarPerm modified mode [ 'pics/pngjs6.png', 438, 420 ]
+267 silly gunzTarPerm extractEntry pics/pngjs7.png
+268 silly gunzTarPerm modified mode [ 'pics/pngjs7.png', 438, 420 ]
+269 silly gunzTarPerm extractEntry pics/pngjs8.png
+270 silly gunzTarPerm modified mode [ 'pics/pngjs8.png', 438, 420 ]
+271 silly gunzTarPerm extractEntry pics/pngjs9.png
+272 silly gunzTarPerm modified mode [ 'pics/pngjs9.png', 438, 420 ]
+273 silly gunzTarPerm extractEntry cam_FireFly2.cpp
+274 silly gunzTarPerm modified mode [ 'cam_FireFly2.cpp', 438, 420 ]
+275 silly gunzTarPerm extractEntry FF2wrapper.cpp
+276 silly gunzTarPerm modified mode [ 'FF2wrapper.cpp', 438, 420 ]
+277 silly lockFile 1d210137-che-node-firefly2-0-0-41-package tar://C:\Users\dood\AppData\Roaming\npm-cache\node-firefly2\0.0.41\package
+278 silly lockFile 1d210137-che-node-firefly2-0-0-41-package tar://C:\Users\dood\AppData\Roaming\npm-cache\node-firefly2\0.0.41\package
+279 silly lockFile 8c2a0e56-node-firefly2-0-0-41-package-tgz tar://C:\Users\dood\AppData\Roaming\npm-cache\node-firefly2\0.0.41\package.tgz
+280 silly lockFile 8c2a0e56-node-firefly2-0-0-41-package-tgz tar://C:\Users\dood\AppData\Roaming\npm-cache\node-firefly2\0.0.41\package.tgz
+281 verbose chmod C:\Users\dood\AppData\Roaming\npm-cache\node-firefly2\0.0.41\package.tgz 644
+282 silly chown skipping for windows C:\Users\dood\AppData\Roaming\npm-cache\node-firefly2\0.0.41\package.tgz
+283 silly lockFile 3a52ce78- .
+284 silly lockFile 3a52ce78- .
+285 silly publish { name: 'node-firefly2',
+285 silly publish   description: 'node-firefly2',
+285 silly publish   version: '0.0.41',
+285 silly publish   author: { name: 'Redfish LLC', email: 'm0ose2@yahoo.com' },
+285 silly publish   main: 'addon.js',
+285 silly publish   tags: [ 'pointgrey', 'firefly2', 'camera' ],
+285 silly publish   gypfile: true,
+285 silly publish   scripts: { preinstall: 'node-gyp clean configure build' },
+285 silly publish   dependencies: {},
+285 silly publish   repository:
+285 silly publish    { type: 'git',
+285 silly publish      url: 'https://github.com/m0ose/node-firefly2.git' },
+285 silly publish   homepage: 'https://github.com/m0ose/node-firefly2',
+285 silly publish   readme: 'node-firefly2\n=============\n\nnodejs binding for firefly 2 camera\n\nIntroduction:\nThis is a wrapper for the FlyCapture2 Api from Point Grey research, http://www.ptgrey.com/support/downloads/documents/Doxygen/html/annotated.html.\n\nIntallation:   \n------------\n<b> Windows and Linux are supported (more or less). Macintosh is not</b>. Point Grey Research does not support an SDK for mac. If someone can find a version it would be a big help\n\n<i>  It compiled once for me on Windows 7, but I would like to learn how to ship with a binary </i>\n\n* get nodejs and npm, from nodejs.org\n\n* Install node-gyp from https://github.com/TooTallNate/node-gyp. Use his installation instructions, they are good.\n\n* Download and install Point grey SDK from  http://www.ptgrey.com/support/downloads/downloads_admin/Index.aspx;\n\n* npm install node-firefly2\n \n\nExample:\n--------\n\n        var addon = require(\'node-firefly2\');\n        var fs = require(\'fs\');\n        var sys = require(\'sys\');\n        var Png = require(\'png\').Png;//note doesn\'t work on windows. use png-sync instead\n        //\n        var cam = new addon();\n        console.log( \'num cameras\' , cam.getNumCameras())\n        console.log("start Camera 0 ", cam.startCamera())\n        //\n        //set some default parameters.\n        cam.autoGain(true);\n        cam.autoExposure(true);\n        cam.autoWhiteBalance(true);\n        cam.triggerOff(false);//True uses the cable. Note don\'t use true unless you have a cable. It will wait forever. \n        //\n        //take a few just to get it warmed up. might help?\n        cam.takePhoto();cam.takePhoto();cam.takePhoto();cam.takePhoto()\n        var pic = cam.takePhoto();//actually take the picture\n        var png2 = new Png(pic,640,480,\'rgb\')\n        var png_image = png2.encodeSync();\n        fs.writeFileSync(\'../pics/png_test.png\', png_image.toString(\'binary\'), \'binary\');\n        \nAPI:\n----\n\n* var cam = new addon.FireFlyWrap(); // allways start with this\n* cam.getNumCameras() // returns the number of cameras found\n* cam.startCamera() // starts using the first camera\n* cam.autoGain(false); // turn gain on or off\n* cam.autoExposure(false); // turn auto shutter speed on or off\n* cam.autoWhiteBalance(false); // turn auto white balance on or off\n* cam.gain(2); // manually sets the gain. Note that auto gain must be off for this to work\n* cam.exposure(90); // manually sets shutter speed. in milli seconds\n* cam.triggerOff(true);//True is off, waits for hardware trigger. If no trigger is connected it will wait forever.\n* cam.frameRate(); // sets the fram rate to 90 fps\n* cam.triggerDelay(0.000)//  takes a number in seconds to delay between when the cable trigger fires and when the picture is taken. \n* cam.takePhoto(); // takes a picture and returns a node::buffer\n\n\nCHANGES:\n-------\n*  2013/7/20 : Started this project on linux only.\n*  2013/8/2 : Complete rewrite in order to get it to work on Windows. A bi-product is that the code is much cleaner.\n\n\n\n\n\n      \n\n',
+285 silly publish   readmeFilename: 'README.md',
+285 silly publish   bugs: { url: 'https://github.com/m0ose/node-firefly2/issues' },
+285 silly publish   _id: 'node-firefly2@0.0.41',
+285 silly publish   dist: { shasum: '8a3eacb0fde69c380415f1aca62c4c6f12bf05a0' },
+285 silly publish   _from: '.' }
+286 verbose url raw node-firefly2
+287 verbose url resolving [ 'https://registry.npmjs.org/', './node-firefly2' ]
+288 verbose url resolved https://registry.npmjs.org/node-firefly2
+289 info trying registry request attempt 1 at 11:56:11
+290 http PUT https://registry.npmjs.org/node-firefly2
+291 http 409 https://registry.npmjs.org/node-firefly2
+292 verbose url raw node-firefly2
+293 verbose url resolving [ 'https://registry.npmjs.org/', './node-firefly2' ]
+294 verbose url resolved https://registry.npmjs.org/node-firefly2
+295 info trying registry request attempt 1 at 11:56:11
+296 http GET https://registry.npmjs.org/node-firefly2
+297 http 200 https://registry.npmjs.org/node-firefly2
+298 error publish fail Cannot publish over existing version.
+298 error publish fail Update the 'version' field in package.json and try again.
+298 error publish fail
+298 error publish fail If the previous version was published in error, see:
+298 error publish fail     npm help unpublish
+298 error publish fail
+298 error publish fail To automatically increment version numbers, see:
+298 error publish fail     npm help version
+299 error System Windows_NT 6.1.7601
+300 error command "C:\\Program Files\\nodejs\\\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "publish"
+301 error cwd C:\Users\dood\Documents\tmp\node-firefly2
+302 error node -v v0.10.20
+303 error npm -v 1.3.11
+304 error code EPUBLISHCONFLICT
+305 verbose exit [ 1, true ]

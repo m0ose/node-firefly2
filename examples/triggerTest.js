@@ -1,10 +1,11 @@
 //var addon = require('node-firefly2');
 var addon = require('../build/Release/addon');
+
 var fs = require('fs');
 var sys = require('sys');
-var Png = require('png').Png;
 var timer = require('../timer.js').timer
-
+var PNG = require('pngjs').PNG;
+//var http = require('http');
 
 var cam = new addon();
 console.log('num cameras', cam.getNumCameras())
@@ -25,27 +26,31 @@ cam.triggerDelay(0.000)
 
 
 
-//take a few just to get it warmed up. might help?
 cam.takePhoto();
 cam.takePhoto();
 cam.takePhoto();
 cam.takePhoto()
+console.log(cam.getCamInfo())
 
 var pics = []
 timer.start()
-for (var n = 0.0000; n < 0.0160; n = n + 0.001) {
-    console.log(n)
-    pics.push(cam.takePhoto())
-    cam.triggerDelay(n)
+for (var n = 0; n < 64; n = n + 1) {
+	cam.triggerDelay(n/4000)
+    pics.push(cam.takePhoto('rgba'))
 }
-console.log('taking pictures. ms', timer.stop())
+console.log('taking ', n, 'pictures. ms', timer.stop())
 
 //try to convert using node-png
 timer.start()
+var pnger;
 for (var j = 0; j < pics.length; j++) {
-    var p = pics[j]
-    var png2 = new Png(p, 640, 480, 'rgb')
-    var png_image = png2.encodeSync();
-    fs.writeFileSync('../pics/png_node' + j + '.png', png_image.toString('binary'), 'binary');
+    pnger = new PNG({width: 640, height: 640})
+    var ph = pics[j]
+    for (var i = 0; i < pnger.data.length; i++) {
+        pnger.data[i] = ph[i]//12
+    }
+    pnger.pack().pipe(fs.createWriteStream('../pics/trigjs' + j + '.png'));
 }
-console.log("converting with node-png", timer.stop())
+console.log("converting with javascript-png", timer.stop())
+
+//console.log("converting with node-png", timer.stop())

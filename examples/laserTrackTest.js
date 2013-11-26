@@ -13,7 +13,7 @@ console.log("start Camera 0 ", cam.startCamera())
 cam.autoGain(false);
 cam.autoExposure(false);
 cam.autoWhiteBalance(false);
-cam.triggerOff(true);//True uses the cable
+cam.triggerOff(false);//True uses the cable
 cam.frameRate();
 cam.triggerDelay(0.0094)//(0.000)
 cam.gain(2);

@@ -20,6 +20,8 @@ FireFly2::FireFly2()
   Error error;
   pixf = PIXEL_FORMAT_RGB8;
   myTriggerDelay = 0.0;
+  triggerSource = 1;
+
   verbose = false;
 
   if( verbose == true){
@@ -285,6 +287,7 @@ bool FireFly2::triggerOnOff(bool onOff)//True is off
   
   error = m_pCamera.GetProperty(&prop);
   prop.onOff = onOff;
+  //prop.source = 1;//triggerSource;
   error = m_pCamera.SetProperty(&prop);
   
   return prop.onOff;
