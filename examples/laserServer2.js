@@ -13,7 +13,7 @@ var timer = require('../timer.js').timer
 var _camwidth = 640;
 var _camheight = 480;
 var readTimeout = 10;
-var SEND_MSG_THRESHOLD = -60;
+var SEND_MSG_THRESHOLD = 40;
 var _PORT = 3000;
 var LoopTimeout = null;
 var averageImage;
@@ -86,7 +86,7 @@ var oldVariance = 0
 					if (oldVariance > 1000) {
 						averageImage[i1] = Math.floor(0.6 * averageImage[i1] + 0.4 * thresh)
 					} else {
-						averageImage[i1] = Math.floor(0.9 * averageImage[i1] + 0.1 * thresh)
+						averageImage[i1] = Math.floor(0.1 * averageImage[i1] + 0.9 * thresh)
 					}
 					//  find variance because for some reason its slooooow
 					//
@@ -134,8 +134,9 @@ var brightness = function(r, g, b) {
 
 
 	function emitLaserMsg(x, y, confidence) {
+		confidence = Math.abs(confidence)
 		//console.log('sending',x,y, confidence)
-		if (confidence < SEND_MSG_THRESHOLD) {
+		if (confidence > SEND_MSG_THRESHOLD) {
 			console.log('sending', x, y, confidence)
 			socket.sockets.emit('laser', {
 				x: x,

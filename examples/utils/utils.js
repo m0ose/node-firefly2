@@ -15,17 +15,24 @@ module.exports = {
 	},
 
 	currentTriggerDelay: 0,
-	setDelay: function(cam, seconds) {
+	currentExposure: 0,
+	setDelay: function(cam, seconds, exposure) {
 		if (!seconds) {
 			return this.currentTriggerDelay
 		}
-		if (this.currentTriggerDelay != seconds) {
+		if( this.currentExposure != exposure && exposure > 0){
+			console.log('setting exposure', exposure)
+			this.currentExposure = exposure
+			cam.exposure(exposure);
+		}
+		if (this.currentTriggerDelay != seconds && seconds > 0) {
 			console.log('setting delay', seconds)
 			this.currentTriggerDelay = seconds
 			cam.triggerDelay(this.currentTriggerDelay)
 			cam.takePhoto(); //take one photo, to clear old buffer
 			cam.takePhoto();
 		}
+
 	},
 
 	//
@@ -42,6 +49,8 @@ module.exports = {
 		cam.frameRate();
 		cam.triggerDelay(0.000)
 		cam.takePhoto();
+		cam.takePhoto();
+
 
 		var pics = []
 		for (var n = 0; n < 33; n = n + 1) {
