@@ -24,6 +24,14 @@ var socket;
 var whiteExpo = 90
 var blackExpo = 30
 
+	//  smoothing
+var smoothed = [0, 0]; // or some likely initial value
+var smoothing = 6; // or whatever is desired
+var lastUpdate = new Date;
+var lastXY = [0, 0]
+var maxLastDist = 0.04
+
+
 	function init() {
 
 		console.log("starting camera")
@@ -43,8 +51,8 @@ var blackExpo = 30
 		cam.takePhoto();
 		cam.takePhoto();
 
-		findLightDark(cam)
-		setCamDefaults(cam)
+		//findLightDark(cam)
+		//setCamDefaults(cam)
 
 
 		// initialise an array or 2
@@ -169,11 +177,15 @@ var brightness = function(r, g, b) {
 	function emitLaserMsg(x, y, confidence) {
 		confidence = Math.abs(confidence)
 		//console.log('sending',x,y, confidence)
+		var smoo = smoothedValue([x, y])
+		//console.log(smoo[0].toPrecision(4), smoo[1].toPrecision(4))
 		if (confidence > SEND_MSG_THRESHOLD) {
 			console.log('sending', 'x,y: ', x, y, 'consfidence: ', confidence)
 			socket.sockets.emit('laser', {
-				x: x,
-				y: y,
+				x: smoo[0],
+				y: smoo[1],
+				rawX: x,
+				rawY: y,
 				c: Math.abs(confidence)
 			});
 		}
@@ -239,5 +251,22 @@ var brightness = function(r, g, b) {
 		});
 		socket.set('log level', 1);
 	}
+
+
+
+	function smoothedValue(newValue) {
+		var now = new Date;
+		var elapsedTime = now - lastUpdate;
+		//smoothed = [smoothed[0] + elapsedTime * ( newValue[0] - smoothed[0] ) / smoothing, smoothed[1] + elapsedTime * ( newValue[1] - smoothed[1] ) / smoothing];
+		var dist = Math.sqrt(Math.pow(smoothed[0] - newValue[0], 2) + Math.pow(smoothed[1] - newValue[1], 2))
+		if (dist > maxLastDist) {
+			smoothed = newValue
+		} else {
+			smoothed = [smoothed[0] + (newValue[0] - smoothed[0]) / smoothing, smoothed[1] + (newValue[1] - smoothed[1]) / smoothing];
+		}
+		lastUpdate = now;
+		return smoothed;
+	}
+
 
 init()
