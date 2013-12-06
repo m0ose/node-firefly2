@@ -15,7 +15,7 @@ cam.autoGain(false);
 cam.autoExposure(false);
 cam.autoWhiteBalance(false);
 cam.gain(2);
-cam.exposure(90);
+cam.exposure(40);
 cam.triggerOff(true);//True is off, waits for hardware trigger
 cam.frameRate();
 cam.triggerDelay(0.000)
@@ -34,8 +34,8 @@ console.log(cam.getCamInfo())
 
 var pics = []
 timer.start()
-for (var n = 0; n < 64; n = n + 1) {
-	cam.triggerDelay(n/4000)
+for (var n = 0; n < 160; n = n + 1) {
+	cam.triggerDelay(n/10000)
     pics.push(cam.takePhoto('rgba'))
 }
 console.log('taking ', n, 'pictures. ms', timer.stop())

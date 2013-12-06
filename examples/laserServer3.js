@@ -18,18 +18,18 @@ var _PORT = 3000;
 var LoopTimeout = null;
 var averageImage;
 var cam = new addon();
-var whiteDelay;
-var darkDelay;
+var whiteDelay = 0.005//0.004;
+var darkDelay = 0.001//0.0075;
 var socket;
-var whiteExpo = 90
-var blackExpo = 30
+var whiteExpo = 240//90
+var blackExpo = 20
 
-	//  smoothing
+//  smoothing
 var smoothed = [0, 0]; // or some likely initial value
-var smoothing = 6; // or whatever is desired
+var smoothing = 100//15; // or whatever is desired
 var lastUpdate = new Date;
 var lastXY = [0, 0]
-var maxLastDist = 0.04
+var maxLastDist = 0.02
 
 
 	function init() {
@@ -54,7 +54,6 @@ var maxLastDist = 0.04
 		//findLightDark(cam)
 		//setCamDefaults(cam)
 
-
 		// initialise an array or 2
 		averageImage = new Int16Array(_camwidth * _camheight) //new Array(_camwidth * _camheight);
 		for (var i = 0; i < averageImage.length; i++) {
@@ -70,12 +69,14 @@ var maxLastDist = 0.04
 	function findLightDark(cam) {
 		// Find the dark and light frames
 		timer.start()
+		cam.takePhoto();
+		cam.takePhoto();
 		var keyFrames = utils.findMinMax(cam)
 		whiteDelay = keyFrames.high.ms;
 		darkDelay = keyFrames.low.ms;
 		console.log(keyFrames)
 		console.log('time to callibrate light and dark frames', timer.stop())
-
+		setCamDefaults(cam)
 		return keyFrames
 	}
 	//
@@ -89,79 +90,83 @@ var maxLastDist = 0.04
 		cam.exposure(whiteExpo);
 		cam.triggerOff(true); //True is off, waits for hardware trigger
 		cam.frameRate();
-		cam.triggerDelay(0.000)
+		cam.triggerDelay(whiteDelay)
 		cam.takePhoto();
 	}
 	//
 	//  Search for laser pointer
 	//
 var oldVariance = 0;
+var lastSearchIter = new Date
 
-function searchLoop() {
-	timer.start()
-	var radius = 5;
-	utils.setDelay(cam, darkDelay, blackExpo)
-	var buf = cam.takePhoto();
+	function searchLoop() {
+		//console.log('search LOOOPPPPPP!!!!!!!!!!!!!!!!!!!!')
+		timer.start()
+		var radius = 5;
+		//console.log( darkDelay, blackExpo)
+		utils.setDelay(cam, darkDelay, blackExpo)
+		var buf = cam.takePhoto();
 
-	if (buf) {
-		var bestVal = Number.MAX_VALUE;
-		var bestIndex = 0;
-		var mean = 0
-		var variance = 0;
-		var samples = 0
-		for (var x = 0; x < _camwidth; x++) {
-			for (var y = 0; y < _camheight; y++) {
-				var i1 = y * _camwidth + x;
-				var i2 = i1 * 3;
-				var r = buf[i2];
-				var g = buf[i2 + 1]
-				var b = buf[i2 + 2]
-				var thresh = Math.floor(redThreshold(r, g, b));
-				//var gright =  Math.floor(brightness(r, g, b));
-				var diff = Math.floor(thresh - averageImage[i1]);
-				if (diff < bestVal) {
-					bestVal = diff;
-					bestIndex = i1;
+		if (buf) {
+			var bestVal = Number.MAX_VALUE;
+			var bestIndex = 0;
+			var mean = 0
+			var variance = 0;
+			var samples = 0
+			for (var x = 0; x < _camwidth; x++) {
+				for (var y = 0; y < _camheight; y++) {
+					var i1 = y * _camwidth + x;
+					var i2 = i1 * 3;
+					var r = buf[i2];
+					var g = buf[i2 + 1]
+					var b = buf[i2 + 2]
+					var thresh = Math.floor(redThreshold(r, g, b));
+					//var gright =  Math.floor(brightness(r, g, b));
+					var diff = Math.floor(thresh - averageImage[i1]);
+					if (diff < bestVal) {
+						bestVal = diff;
+						bestIndex = i1;
+					}
+
+					//if (oldVariance > 1000) {
+					//	averageImage[i1] = Math.floor(0.6 * averageImage[i1] + 0.4 * thresh)
+					//} else {
+					averageImage[i1] = Math.floor(0.5 * averageImage[i1] + 0.5 * thresh)
+					//}
+					//  find variance because for some reason its slooooow
+					//
+					if (i1 % 1323 == 0) {
+						variance += diff * diff
+						samples++
+					}
+
 				}
-
-				//if (oldVariance > 1000) {
-				//	averageImage[i1] = Math.floor(0.6 * averageImage[i1] + 0.4 * thresh)
-				//} else {
-				averageImage[i1] = Math.floor(0.5 * averageImage[i1] + 0.5 * thresh)
-				//}
-				//  find variance because for some reason its slooooow
-				//
-				if (i1 % 1323 == 0) {
-					variance += diff * diff
-					samples++
-				}
-
 			}
+
+			//console.log(variance)
+
+			variance = parseInt(variance / ((samples) - 1))
+			oldVariance = variance
+
+			var bestxy = [Math.floor(bestIndex % (_camwidth)), Math.floor(bestIndex / (_camwidth))]
+			var now = new Date
+			if (now - lastSearchIter > 2000) {
+				console.log('search for laser. searchtime:', timer.stop(), 'bestval: ', bestVal, 'x,y:', bestxy, 'variance', variance)
+				lastSearchIter = now
+			}
+			//console.log('xy', bestxy, 'value', bestVal)
+			emitLaserMsg((bestxy[0]) / _camwidth, (bestxy[1]) / _camheight, bestVal)
+
+			LoopTimeout = setTimeout(searchLoop, readTimeout)
+		} else {
+			console.log("FAIL")
 		}
-
-		//console.log(variance)
-
-		variance = parseInt(variance / ((samples) - 1))
-		oldVariance = variance
-
-		var bestxy = [Math.floor(bestIndex % (_camwidth)), Math.floor(bestIndex / (_camwidth))]
-
-		//console.log( 'xy', bestxy, 'value', bestVal)
-		emitLaserMsg((bestxy[0]) / _camwidth, (bestxy[1]) / _camheight, bestVal)
-
-		if (Math.random() > 0.95) {
-			console.log('timer:', timer.stop(), 'bestval: ', bestVal, 'x,y:', bestxy, 'variance', variance)
-		}
-		LoopTimeout = setTimeout(searchLoop, readTimeout)
-	} else {
-		console.log("FAIL")
 	}
-}
 
 
-//
-//  functions needed by the laser point loop
-//
+	//
+	//  functions needed by the laser point loop
+	//
 var redThreshold = function(r, g, b) {
 	dx = r - 255,
 	dy = (g - 255) / 2,
@@ -180,7 +185,7 @@ var brightness = function(r, g, b) {
 		var smoo = smoothedValue([x, y])
 		//console.log(smoo[0].toPrecision(4), smoo[1].toPrecision(4))
 		if (confidence > SEND_MSG_THRESHOLD) {
-			console.log('sending', 'x,y: ', x, y, 'consfidence: ', confidence)
+			console.log('sending', 'x,y: ', x, y, 'confidence: ', confidence)
 			socket.sockets.emit('laser', {
 				x: smoo[0],
 				y: smoo[1],
@@ -200,10 +205,22 @@ var brightness = function(r, g, b) {
 		console.log(cam.getWidth(), cam.getHeight())
 		var server = http.createServer(function(req, res) {
 			var request = url.parse(req.url, true);
+			var querydata = url.parse(req.url, true).query;
+			//console.log(querydata)
 			var action = request.pathname;
 			if (action == '/image.png') {
+				console.log(' image requested', querydata)
 				clearTimeout(LoopTimeout)
-				utils.setDelay(cam, whiteDelay, whiteExpo)
+				var myexp = whiteExpo
+				var mydelay = whiteDelay
+				console.log(myexp, mydelay)
+				if( querydata.exposure &&  Number(querydata.exposure) > 0){
+					myexp = Math.min(1000,Math.max(1,Number(querydata.exposure)))
+				}
+				if( querydata.delay &&  Number(querydata.delay) > 0){
+					mydelay = Math.min(1,Math.max(0,Number(querydata.delay)))
+				}
+				utils.setDelay(cam, mydelay, myexp)
 				res.writeHead(200, utils.CORSheaders);
 				var pnger = new PNG({
 					width: 640,
@@ -215,7 +232,7 @@ var brightness = function(r, g, b) {
 				}
 				pnger.pack()
 				pnger.pipe(res);
-				LoopTimeout = setTimeout(searchLoop, 1500)
+				LoopTimeout = setTimeout(searchLoop, 2000)
 
 			} else if (action == "/findMinMax") {
 				clearTimeout(LoopTimeout)
@@ -262,7 +279,11 @@ var brightness = function(r, g, b) {
 		if (dist > maxLastDist) {
 			smoothed = newValue
 		} else {
-			smoothed = [smoothed[0] + (newValue[0] - smoothed[0]) / smoothing, smoothed[1] + (newValue[1] - smoothed[1]) / smoothing];
+			var smoothing2 = 1/(smoothing*dist) + 1
+			//smoothed = [smoothed[0] + (newValue[0] - smoothed[0]) / smoothing, smoothed[1] + (newValue[1] - smoothed[1]) / smoothing];
+			smoothed = [smoothed[0] + (newValue[0] - smoothed[0]) / smoothing2
+			, smoothed[1] + (newValue[1] - smoothed[1]) / smoothing2];
+
 		}
 		lastUpdate = now;
 		return smoothed;

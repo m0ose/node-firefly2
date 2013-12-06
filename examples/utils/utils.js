@@ -16,19 +16,26 @@ module.exports = {
 
 	currentTriggerDelay: 0,
 	currentExposure: 0,
-	setDelay: function(cam, seconds, exposure) {
-		if (!seconds) {
+	setDelay: function(cam, seconds, myexposure) {
+		if (!(seconds >= 0) || !myexposure) {
+			console.log('dang', seconds, myexposure)
 			return this.currentTriggerDelay
 		}
-		if( this.currentExposure != exposure && exposure > 0){
-			console.log('setting exposure', exposure)
-			this.currentExposure = exposure
-			cam.exposure(exposure);
+
+		var Ichanged = false
+		if (this.currentExposure != myexposure && myexposure > 0) {
+			console.log('setting myexposure', myexposure)
+			this.currentExposure = myexposure
+			cam.exposure(myexposure);
+			Ichanged = true;
 		}
 		if (this.currentTriggerDelay != seconds && seconds > 0) {
 			console.log('setting delay', seconds)
 			this.currentTriggerDelay = seconds
 			cam.triggerDelay(this.currentTriggerDelay)
+			Ichanged = true
+		}
+		if (Ichanged) {
 			cam.takePhoto(); //take one photo, to clear old buffer
 			cam.takePhoto();
 		}
@@ -43,8 +50,8 @@ module.exports = {
 		cam.autoGain(false);
 		cam.autoExposure(false);
 		cam.autoWhiteBalance(false);
-		cam.gain(2);
-		cam.exposure(90);
+		cam.gain(16);
+		cam.exposure(50);
 		cam.triggerOff(true); //True is off, waits for hardware trigger
 		cam.frameRate();
 		cam.triggerDelay(0.000)
@@ -76,8 +83,8 @@ module.exports = {
 		for (var j = 0; j < pics.length; j++) {
 			imgbuff = pics[j]
 			var score = 0
-			for (var i = 0; i < imgbuff.length; i = i + 101) {
-				var px = imgbuff[i]
+			for (var i = 12; i < imgbuff.length; i = i + 101) {
+				var px = Math.sqrt(Math.pow(imgbuff[i - 3], 2) + Math.pow(imgbuff[i - 2], 2) + Math.pow(imgbuff[i - 1], 2) + Math.pow(imgbuff[i], 2))
 				score += px
 			}
 
@@ -103,6 +110,8 @@ module.exports = {
 		console.log("high", lightFrame)
 		this.saveBuff2Png(pics[darkFrame.index], '../pics/darkFrame.png')
 		this.saveBuff2Png(pics[lightFrame.index], '../pics/lightFrame.png')
+		cam.gain(2);
+
 		return ({
 			low: darkFrame,
 			high: lightFrame
